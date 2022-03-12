@@ -7,16 +7,16 @@ Given n, return the value of Tn.
 """
 
 def trib(self, n, memo={}):
+        if n in memo:
+            return memo[n]
         if n==0:
-            memo[0] = 0
+            return 0
         elif n==1:
-            memo[1] = 1
+            return 1
         elif n==2:
-            memo[2] = 1
-        else:
-            memo[n]=self.trib(n-1, memo)+self.trib(n-2, memo)+self.trib(n-3, memo)
-        print(memo)
+            return 1
+        memo[n]=self.trib(n-1, memo)+self.trib(n-2, memo)+self.trib(n-3, memo)
         return memo[n]
             
-    def tribonacci(self, n: int) -> int:
+def tribonacci(self, n: int) -> int:
         return self.trib(n)
