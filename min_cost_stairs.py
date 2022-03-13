@@ -15,3 +15,22 @@ d[1] = cost[1]
 for i in range(2,n):
     d[i] = min(d[i-1], d[i-2]) + cost[i]
 return min(d[-1], d[n-2])
+
+# alternative and memoized form
+
+def mcs(self, n, cost, memo={}):
+        if n in memo:
+            return memo[n]
+        if n == 0:
+            return cost[0]
+        if n == 1:
+            return cost[1]
+        memo[n] = min(self.mcs(n-1,cost,memo), self.mcs(n-2, cost, memo))+cost[n]
+        return memo[n]
+    
+def minCostClimbingStairs(self, cost: List[int]) -> int:
+    memo={}
+    n = len(cost)
+    cost.append(0)
+    print(cost)
+    return self.mcs(n,cost,memo)
