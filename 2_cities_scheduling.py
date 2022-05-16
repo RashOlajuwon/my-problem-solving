@@ -3,7 +3,7 @@ A company is planning to interview 2n people. Given the array costs where costs[
 
 Return the minimum cost to fly every person to a city such that exactly n people arrive in each city.
 
-My approach:
+My approach>>>
 I iterated thru the List costs: if 1st element in each sublist is > than the 2nd element, I append to a, else, I append to b.
 if b is greater than a, I dealt with b as follows;
 I created a sort function called diff to get the abs value of the diff btw 1st and 2nd element of each sublist in b.
