@@ -12,7 +12,7 @@ are at the front in b.
 I then add a+b=c
 I run thru c, halfway adding up 1st elements in each sublist, and the other halfway adding up 2nd elements in each sublist.
 
-if a was greater, I reversed the process.
+if a was greater, I reversed the process...
 """
 
 def twoCitySchedCost(self, costs: List[List[int]]) -> int:
